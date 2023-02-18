@@ -23,9 +23,10 @@ const options = {
 async function start() {
   // Create a server with a host and port
   dotEnv.config();
+  process.env.NODE_ENV = process.env.NODE_ENV || 'development';
   const server = Hapi.server({
-    port: process.env.PORT || 3000,
-    host: process.env.HOST,
+    port: process.env.PORT || 9000,
+    host: process.env.HOST || 'localhost',
     routes: {
       cors: {
         origin: ['*'],
