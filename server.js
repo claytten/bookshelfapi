@@ -3,6 +3,7 @@ const Hapi = require('@hapi/hapi');
 const dotEnv = require('dotenv');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const Good = require('@hapi/good');
+const publicRoutes = require('./internal/routes');
 
 const options = {
   plugin: Good,
@@ -33,6 +34,7 @@ async function start() {
   });
 
   // Add the route
+  server.route(publicRoutes);
 
   if (process.env.NODE_ENV === 'production') {
     options.options.ops = {
