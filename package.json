@@ -4,6 +4,7 @@
   "description": "Portfolio Submission for Dicoding REST API using Hapi Framework",
   "main": "server.js",
   "scripts": {
+    "start": "node ./server.js",
     "dev": "nodemon ./server.js",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix --ext .js"
